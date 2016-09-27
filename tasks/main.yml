@@ -3,7 +3,7 @@
 
 - name: Compatibility check
   fail: msg="This role only works on Debian systems"
-  when: ansible_os_family not "Debian"
+  when: not ansible_os_family == "Debian"
 
 - include: install.yml
   tags:
